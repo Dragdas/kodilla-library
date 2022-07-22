@@ -32,13 +32,13 @@ public class Title {
     @Column(name = "releaseDate")
     private LocalDate releaseDate;
 
-    @OneToMany(
+/*    @OneToMany(
             targetEntity = Book.class,
             mappedBy = "title",
             cascade = CascadeType.ALL,
             fetch = FetchType.LAZY
     )
-    private List<Book> books = new ArrayList<>();
+    private List<Book> books = new ArrayList<>();*/
 
 
 }

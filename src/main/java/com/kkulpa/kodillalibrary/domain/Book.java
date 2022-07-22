@@ -4,6 +4,7 @@ package com.kkulpa.kodillalibrary.domain;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
@@ -11,6 +12,7 @@ import javax.persistence.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
+@Setter
 @Entity(name = "books")
 public class Book {
 
@@ -27,7 +29,5 @@ public class Book {
     @Column(name = "status")
     private BookStatus status;
 
-    @OneToOne(mappedBy = "lentBook")
-    private Lending lendingDetails;
 
 }
