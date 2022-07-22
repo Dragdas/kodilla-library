@@ -21,10 +21,11 @@ public class Lending {
     private long id;
 
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne(cascade = CascadeType.DETACH)
     @JoinColumn(name = "book_id", referencedColumnName = "id")
     private Book lentBook;
 
+    //TODO usuwa książkę po usunięciu wpisu o pożyczeniu
     @ManyToOne
     @JoinColumn(name = "user_id", referencedColumnName = "id",nullable = false)
     private User borrower;

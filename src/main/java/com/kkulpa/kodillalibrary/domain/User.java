@@ -31,12 +31,5 @@ public class User {
     @Column(name = "joined")
     private LocalDate joined;
 
-    @OneToMany(
-            targetEntity = Lending.class,
-            mappedBy = "borrower",
-            cascade = CascadeType.ALL,
-            fetch = FetchType.LAZY
-    )
-    private List<Lending> lendings = new ArrayList<>();
 
 }

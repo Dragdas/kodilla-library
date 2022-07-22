@@ -4,7 +4,7 @@ import com.kkulpa.kodillalibrary.controllers.book.BookNotFoundException;
 import com.kkulpa.kodillalibrary.domain.Book;
 import com.kkulpa.kodillalibrary.domain.BookDto;
 import com.kkulpa.kodillalibrary.domain.BookStatus;
-import com.kkulpa.kodillalibrary.domain.IllegalBookStatusException;
+import com.kkulpa.kodillalibrary.controllers.book.IllegalBookStatusException;
 import com.kkulpa.kodillalibrary.service.BookDbService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

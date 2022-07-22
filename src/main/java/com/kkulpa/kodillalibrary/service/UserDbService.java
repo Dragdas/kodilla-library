@@ -1,6 +1,7 @@
 package com.kkulpa.kodillalibrary.service;
 
 
+import com.kkulpa.kodillalibrary.controllers.user.UserNotFoundException;
 import com.kkulpa.kodillalibrary.domain.User;
 import com.kkulpa.kodillalibrary.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
@@ -20,6 +21,10 @@ public class UserDbService {
 
     public List<User> getAllUsers(){
         return userRepository.findAll();
+    }
+
+    public User getUserById(long userId) throws UserNotFoundException {
+        return userRepository.findById(userId).orElseThrow(UserNotFoundException::new);
     }
 
 

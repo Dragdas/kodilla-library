@@ -13,8 +13,7 @@ public class UserMapper {
             return new User(0,
                     userDTO.getFirstName(),
                     userDTO.getName(),
-                    LocalDate.now(),
-                    null
+                    LocalDate.now()
                     );
     }
 
