@@ -24,7 +24,6 @@ public class Lending {
     @JoinColumn(name = "book_id", referencedColumnName = "id")
     private Book lentBook;
 
-
     @ManyToOne(optional = false)
     @JoinColumn(name = "user_id", referencedColumnName = "id",nullable = false)
     private User borrower;
@@ -34,9 +33,5 @@ public class Lending {
 
     @Column(name = "due_date")
     private LocalDate dueDate;
-
-
-
-
 
 }

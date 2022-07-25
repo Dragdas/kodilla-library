@@ -20,7 +20,6 @@ import java.util.List;
 public class BookController {
 
     private final BookDbService bookDbService;
-    private final TitleDbService titleDbService;
     private final BookMapper bookMapper;
 
     @GetMapping
@@ -33,13 +32,10 @@ public class BookController {
         return ResponseEntity.ok(bookDbService.countBooksByStatusAndTitleId(BookStatus.AVAILABLE,titleId));
     }
 
-
     @PostMapping(value = "{titleId}")
     public ResponseEntity<Void> addNewBook(@PathVariable Long titleId) throws TitleNotFoundException {
 
-        Title title = titleDbService.getTitle(titleId);
-        Book book = new Book(0, title, BookStatus.AVAILABLE);
-        bookDbService.saveBook(book);
+        bookDbService.addNewBook(titleId);
 
         return ResponseEntity.ok().build();
     }

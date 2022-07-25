@@ -31,5 +31,4 @@ public class User {
     @Column(name = "joined")
     private LocalDate joined;
 
-
 }

@@ -22,7 +22,6 @@ public class UserController {
     private final UserDbService userDbService;
     private final UserMapper userMapper;
 
-
     @GetMapping
     public ResponseEntity<List<User>> getUsers(){
 
@@ -30,13 +29,11 @@ public class UserController {
 
     }
 
-
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Void> createUser (@RequestBody UserDTO userDTO){
         User user = userMapper.createNewUser(userDTO);
         userDbService.saveUser(user);
         return ResponseEntity.ok().build();
     }
-
 
 }
