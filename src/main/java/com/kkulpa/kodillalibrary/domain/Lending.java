@@ -20,13 +20,12 @@ public class Lending {
     @GenericGenerator(name = "increment", strategy = "increment")
     private long id;
 
-
-    @OneToOne(cascade = CascadeType.DETACH)
+    @OneToOne(optional = false)
     @JoinColumn(name = "book_id", referencedColumnName = "id")
     private Book lentBook;
 
-    //TODO usuwa książkę po usunięciu wpisu o pożyczeniu
-    @ManyToOne
+
+    @ManyToOne(optional = false)
     @JoinColumn(name = "user_id", referencedColumnName = "id",nullable = false)
     private User borrower;
 
