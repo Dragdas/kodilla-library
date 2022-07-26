@@ -21,7 +21,7 @@ public class Book {
     @GenericGenerator(name = "increment", strategy = "increment")
     private long id;
 
-    @ManyToOne
+    @ManyToOne(optional = false)
     @JoinColumn(name = "title_id", nullable = false)
     private Title title;
 

@@ -22,10 +22,10 @@ public class User {
     @GenericGenerator(name = "increment", strategy = "increment")
     private long id;
 
-    @Column(name = "firstName")
+    @Column(name = "firstName", nullable = false)
     private String firstName;
 
-    @Column(name = "name")
+    @Column(name = "name", nullable = false)
     private String name;
 
     @Column(name = "joined")

@@ -23,13 +23,13 @@ public class Title {
     @GenericGenerator(name = "increment", strategy = "increment")
     private long id;
 
-    @Column(name = "title")
+    @Column(name = "title", nullable = false)
     private String title;
 
-    @Column(name = "author")
+    @Column(name = "author", nullable = false)
     private String author;
 
-    @Column(name = "releaseDate")
+    @Column(name = "releaseDate", nullable = false)
     private LocalDate releaseDate;
 
 }
